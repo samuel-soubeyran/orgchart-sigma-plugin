@@ -49,10 +49,10 @@ function graph(data) {
         const colors = ['#278B8D', '#404040', '#0C5C73', '#33C6CB'];
         const color = colors[d.depth % colors.length];
         return `
-            <div style="background-color:${color}; position:absolute;margin-top:-1px; margin-left:-1px;width:${d.width}px;height:${d.height}px;border-radius:50px">
+            <div style="background-color:${color}; position:absolute;margin-top:-1px; margin-left:-1px;width:${d.width}px;height:${d.height}px;border-radius:50px;text-align:left;">
                <img src=" ${
             d.data.imageUrl
-        }" style="position:absolute;margin-top:5px;margin-left:${5}px;border-radius:100px;width:60px;height:60px;text-align: left;" />
+        }" style="position:absolute;margin-top:5px;margin-left:${5}px;border-radius:100px;width:60px;height:60px;" />
                <div style="position:absolute;top:-15px;width:${
             d.width
         }px;text-align:center;color:#fafafa;">
