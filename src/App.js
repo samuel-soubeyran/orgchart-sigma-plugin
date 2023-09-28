@@ -2,7 +2,7 @@ import './App.css';
 import default_face from "./default.png";
 import root_face from "./sigma.jpg";
 import {client, useConfig, useElementData, useElementColumns} from '@sigmacomputing/plugin';
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect } from 'react';
 import { OrgChart } from 'd3-org-chart';
 import * as d3 from 'd3';
 
@@ -45,29 +45,29 @@ function graph(data) {
         const color = '#FFFFFF';
         const imageDiffVert = 25 + 2;
         return `
-                <div className="parent" style='width:${d.width}px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px;'>
-                        <div className="person-component" style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: 1px solid #E4E2E9; display:flex; justify-content:center; align-items:center; flex-direction:column; position: relative">
-                                          
-                      
-                            <img src=" ${d.data.imageUrl}" style="margin-left:${-139}px;border-radius:500px;width:50px;height:50px; position: fixed; top: -10px;" />
-                            
-                            <div className="name parent" style="position: fixed; top: 35px;">
-                              <div className="person name" style="font-size:15px;color:#08011E;margin-left:-100px;margin-top:5px; position: fixed;">  ${d.data.name} </div>
-                            </div>
-                            
-                            <div className="title parent" style="position: fixed; width: 200px;">
-                              <div className="person title" style="color:#4346FF;font-size:10px; font-weight: bold; width: fit-content; left: 12px; position: fixed; top: 62px;"> ${d.data.positionName} </div>
-                            </div>
-                            <div className="area parent" style="position: fixed; width: 200px;">
-                              <div className="person area" style="color:#716E7B;font-size:10px; width: fit-content; position: fixed; top: 80px; left: 12px;"> ${d.data.area} </div>
-                            </div>
-                            <div className="location parent" style="position: fixed; width: 200px; height: 70px;">
-                              <div className="person location" style="color:#716E7B;font-size:10px; width: fit-content; position: absolute; right: 0px;"> ${d.data.location} </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                            `;
+          <div className="parent" style='width:${d.width}px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px;'>
+                  <div className="person-component" style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: 1px solid #E4E2E9; display:flex; justify-content:center; align-items:center; flex-direction:column; position: relative">
+
+
+                      <img src=" ${d.data.imageUrl}" style="margin-left:${-139}px;border-radius:500px;width:50px;height:50px; position: fixed; top: -10px;" />
+
+                      <div className="name parent" style="position: fixed; top: 35px;">
+                        <div className="person name" style="font-size:15px;color:#08011E;margin-left:-100px;margin-top:5px; position: fixed;">  ${d.data.name} </div>
+                      </div>
+
+                      <div className="title parent" style="position: fixed; width: 200px;">
+                        <div className="person title" style="color:#4346FF;font-size:10px; font-weight: bold; width: fit-content; left: 12px; position: fixed; top: 62px;"> ${d.data.positionName} </div>
+                      </div>
+                      <div className="area parent" style="position: fixed; width: 200px;">
+                        <div className="person area" style="color:#716E7B;font-size:10px; width: fit-content; position: fixed; top: 80px; left: 12px;"> ${d.data.area} </div>
+                      </div>
+                      <div className="location parent" style="position: fixed; width: 200px; height: 70px;">
+                        <div className="person location" style="color:#716E7B;font-size:10px; width: fit-content; position: absolute; right: 0px;"> ${d.data.location} </div>
+                      </div>
+
+                  </div>
+              </div>
+            `;
       })
       .render();
 }
